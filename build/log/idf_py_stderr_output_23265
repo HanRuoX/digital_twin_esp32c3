@@ -1,0 +1,26 @@
+CMake Warning at /Users/shangxin/esp/esp-idf/tools/cmake/project.cmake:443 (message):
+  enabled ccache in build but ccache program not found
+Call Stack (most recent call first):
+  CMakeLists.txt:6 (project)
+
+
+CMake Error at /Users/shangxin/esp/esp-idf/tools/cmake/component.cmake:479 (add_library):
+  Cannot find source file:
+
+    /Users/shangxin/esp-project/digital_twin_esp32c3/components/EPD/EPD
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+  .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+  .f95 .f03 .hip .ispc
+Call Stack (most recent call first):
+  components/EPD/CMakeLists.txt:1 (idf_component_register)
+
+
+CMake Error at /Users/shangxin/esp/esp-idf/tools/cmake/component.cmake:479 (add_library):
+  No SOURCES given to target: __idf_EPD
+Call Stack (most recent call first):
+  components/EPD/CMakeLists.txt:1 (idf_component_register)
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+ninja: error: rebuilding 'build.ninja': subcommand failed

@@ -402,3 +402,28 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/main/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/Config/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/Fonts/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/GUI/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/e-Paper/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/Examples/cmake_install.cmake")
+endif()
+

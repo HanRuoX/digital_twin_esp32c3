@@ -59,3 +59,8 @@
 /Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/spiffs/libspiffs.a
 /Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/main/libmain.a
+/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/Config/libConfig.a
+/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/Fonts/libFonts.a
+/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/GUI/libGUI.a
+/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/e-Paper/libe-Paper.a
+/Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/Examples/libExamples.a

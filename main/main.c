@@ -13,16 +13,13 @@
 #include "esp_adc/adc_oneshot.h"
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
-#include "EPD.h"
-#include "GUI_Paint.h"
-#include "ImageData.h"
-#include "EPD_SDCard.h"
+#include "DEV_Config.h"
+#include "EPD_Test.h"
+
 const static char *TAG = "DEV";
 int adc_raw[0] = {0x00};
-
-void app_main(void)
-{
-    //-------------ADC1 Init---------------//
+void adc_task(void *arg){
+     //-------------ADC1 Init---------------//
     adc_oneshot_unit_handle_t adc1_handle;
     adc_oneshot_unit_init_cfg_t init_config1 = {
         .unit_id = ADC_UNIT_1,
@@ -36,15 +33,25 @@ void app_main(void)
     };
     ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_4, &config));
 
-
-    while (1) {
+    for (;;)
+    {
         ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC_CHANNEL_4, &adc_raw[0]));
         //ESP_LOGI(TAG, "ADC Channel2 Raw Data: %d",  adc_raw[0]);
         printf("samples:%d\n", adc_raw[0]);
         vTaskDelay(pdMS_TO_TICKS(100));
-
-
     }
+    
+}
 
+void ink_task(void *arg){
+    GPIO_Init();
+    SPI_Init();
+    EPD_2in13_test();
 
+    
+}
+void app_main(void)
+{
+     xTaskCreate(adc_task, "main_task", 2048, NULL, 6, NULL);
+     xTaskCreate(ink_task, "main_task", 2048, NULL, 6, NULL);
 }

@@ -1,0 +1,49 @@
+[1/17] Performing build step for 'bootloader'
+[1/1] cd /Users/shangxin/esp-project/digital_twin_esp32c3/build/bootloader/esp-idf/esptool_py && /Users/shangxin/.espressif/python_env/idf5.1_py3.10_env/bin/python /Users/shangxin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/shangxin/esp-project/digital_twin_esp32c3/build/bootloader/bootloader.bin
+Bootloader binary size 0x5070 bytes. 0x2f90 bytes (37%) free.
+[2/17] No install step for 'bootloader'
+[3/17] Building C object esp-idf/Config/CMakeFiles/__idf_Config.dir/src/DEV_Config.c.obj
+[4/17] Building C object esp-idf/e-Paper/CMakeFiles/__idf_e-Paper.dir/src/EPD_2in13.c.obj
+[5/17] Building C object esp-idf/Examples/CMakeFiles/__idf_Examples.dir/src/EPD_2in13_test.c.obj
+In file included from /Users/shangxin/esp-project/digital_twin_esp32c3/components/Examples/include/EPD_Test.h:36,
+                 from /Users/shangxin/esp-project/digital_twin_esp32c3/components/Examples/src/EPD_2in13_test.c:30:
+/Users/shangxin/esp-project/digital_twin_esp32c3/components/Config/include/Debug.h:21:28: warning: 'TAG_INK' defined but not used [-Wunused-variable]
+   21 |         const static char *TAG_INK = "INK";
+      |                            ^~~~~~~
+[6/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+/Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:20:19: warning: excess elements in array initializer
+   20 | int adc_raw[0] = {0x00};
+      |                   ^~~~
+/Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:20:19: note: (near initialization for 'adc_raw')
+/Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:19:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   19 | const static char *TAG = "DEV";
+      |                    ^~~
+In file included from /Users/shangxin/esp-project/digital_twin_esp32c3/components/Examples/include/EPD_Test.h:36,
+                 from /Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:17:
+/Users/shangxin/esp-project/digital_twin_esp32c3/components/Config/include/Debug.h:21:28: warning: 'TAG_INK' defined but not used [-Wunused-variable]
+   21 |         const static char *TAG_INK = "INK";
+      |                            ^~~~~~~
+[7/17] Completed 'bootloader'
+[8/17] Linking C static library esp-idf/Config/libConfig.a
+[9/17] Linking C static library esp-idf/e-Paper/libe-Paper.a
+[10/17] Building C object esp-idf/GUI/CMakeFiles/__idf_GUI.dir/src/GUI_Paint.c.obj
+/Users/shangxin/esp-project/digital_twin_esp32c3/components/GUI/src/GUI_Paint.c: In function 'Paint_DrawPoint':
+/Users/shangxin/esp-project/digital_twin_esp32c3/components/GUI/src/GUI_Paint.c:324:50: warning: comparison of unsigned expression in '< 0' is always false [-Wtype-limits]
+  324 |                 if(Xpoint + XDir_Num - Dot_Pixel < 0 || Ypoint + YDir_Num - Dot_Pixel < 0)
+      |                                                  ^
+/Users/shangxin/esp-project/digital_twin_esp32c3/components/GUI/src/GUI_Paint.c:324:87: warning: comparison of unsigned expression in '< 0' is always false [-Wtype-limits]
+  324 |                 if(Xpoint + XDir_Num - Dot_Pixel < 0 || Ypoint + YDir_Num - Dot_Pixel < 0)
+      |                                                                                       ^
+[11/17] Linking C static library esp-idf/GUI/libGUI.a
+[12/17] Linking C static library esp-idf/Examples/libExamples.a
+[13/17] Linking C static library esp-idf/main/libmain.a
+[14/17] Generating ld/sections.ld
+[15/17] Linking CXX executable main.elf
+[16/17] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /Users/shangxin/esp-project/digital_twin_esp32c3/build/main.bin
+[17/17] cd /Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/esptool_py && /Users/shangxin/.espressif/python_env/idf5.1_py3.10_env/bin/python /Users/shangxin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/shangxin/esp-project/digital_twin_esp32c3/build/partition_table/partition-table.bin /Users/shangxin/esp-project/digital_twin_esp32c3/build/main.bin
+main.bin binary size 0x36fc0 bytes. Smallest app partition is 0x100000 bytes. 0xc9040 bytes (79%) free.
