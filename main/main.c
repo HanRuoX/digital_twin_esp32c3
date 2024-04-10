@@ -16,6 +16,9 @@
 #include "DEV_Config.h"
 #include "EPD_Test.h"
 
+//websocket
+#include "esp_websocket_client.h"
+
 #define USE_ADC_CHANNEL CONFIG_ADC_GPIO_NUM
 const static char *TAG = "DEV";
 int adc_raw[0] = {0x00};
