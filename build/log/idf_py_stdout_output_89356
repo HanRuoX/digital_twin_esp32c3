@@ -1,0 +1,37 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /Users/shangxin/esp-project/digital_twin_esp32c3/build/bootloader/esp-idf/esptool_py && /Users/shangxin/.espressif/python_env/idf5.1_py3.10_env/bin/python /Users/shangxin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/shangxin/esp-project/digital_twin_esp32c3/build/bootloader/bootloader.bin
+Bootloader binary size 0x5070 bytes. 0x2f90 bytes (37%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from /Users/shangxin/esp/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h:11,
+                 from /Users/shangxin/esp/esp-idf/components/esp_hw_support/include/esp_cpu.h:20,
+                 from /Users/shangxin/esp/esp-idf/components/esp_hw_support/include/spinlock.h:11,
+                 from /Users/shangxin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include/freertos/portmacro.h:45,
+                 from /Users/shangxin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:59,
+                 from /Users/shangxin/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:71,
+                 from /Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:9:
+/Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c: In function 'app_main':
+/Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:39:70: warning: passing argument 3 of 'adc_oneshot_read' from incompatible pointer type [-Wincompatible-pointer-types]
+   39 |         ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC_CHANNEL_2, &adc_raw));
+      |                                                                      ^~~~~~~~
+      |                                                                      |
+      |                                                                      int16_t * {aka short int *}
+/Users/shangxin/esp/esp-idf/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+In file included from /Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:13:
+/Users/shangxin/esp/esp-idf/components/esp_adc/include/esp_adc/adc_oneshot.h:89:87: note: expected 'int *' but argument is of type 'int16_t *' {aka 'short int *'}
+   89 | esp_err_t adc_oneshot_read(adc_oneshot_unit_handle_t handle, adc_channel_t chan, int *out_raw);
+      |                                                                                  ~~~~~^~~~~~~
+[5/9] Linking C static library esp-idf/main/libmain.a
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable main.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /Users/shangxin/esp-project/digital_twin_esp32c3/build/main.bin
+[9/9] cd /Users/shangxin/esp-project/digital_twin_esp32c3/build/esp-idf/esptool_py && /Users/shangxin/.espressif/python_env/idf5.1_py3.10_env/bin/python /Users/shangxin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/shangxin/esp-project/digital_twin_esp32c3/build/partition_table/partition-table.bin /Users/shangxin/esp-project/digital_twin_esp32c3/build/main.bin
+main.bin binary size 0x2c320 bytes. Smallest app partition is 0x100000 bytes. 0xd3ce0 bytes (83%) free.

@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "string.h": "c",
+        "adc_oneshot.h": "c"
+    },
+    "idf.adapterTargetName": "esp32c3"
+}

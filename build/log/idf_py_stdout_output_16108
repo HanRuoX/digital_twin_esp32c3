@@ -1,0 +1,11 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/shangxin/esp-project/digital_twin_esp32c3/build/bootloader/esp-idf/esptool_py && /Users/shangxin/.espressif/python_env/idf5.1_py3.10_env/bin/python /Users/shangxin/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/shangxin/esp-project/digital_twin_esp32c3/build/bootloader/bootloader.bin
+Bootloader binary size 0x5070 bytes. 0x2f90 bytes (37%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+/Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:18:19: warning: excess elements in array initializer
+   18 | int adc_raw[0] = {0x00};
+      |                   ^~~~
+/Users/shangxin/esp-project/digital_twin_esp32c3/main/main.c:18:19: note: (near initialization for 'adc_raw')
+[5/10] Linking C static library esp-idf/main/libmain.a
