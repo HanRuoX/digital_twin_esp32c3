@@ -1,7 +1,7 @@
 # ESP32C3采集设备
 
 adc采集：gpio4 对应 ADC_CHANNEL_4
-
+`idf.py add-dependency "espressif/esp_websocket_client^1.2.3"`添加websocket依赖
 ## 墨水屏驱动
 
 > 使用微雪驱动方案，移植微雪驱动到ESPIDF环境中

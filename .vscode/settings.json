@@ -3,7 +3,15 @@
         "stdio.h": "c",
         "stdlib.h": "c",
         "string.h": "c",
-        "adc_oneshot.h": "c"
+        "adc_oneshot.h": "c",
+        "adc_cali_scheme.h": "c",
+        "websocket.h": "c",
+        "epd_test.h": "c",
+        "websocket_task.h": "c",
+        "protocol_examples_common.h": "c",
+        "esp_netif.h": "c",
+        "esp_event.h": "c",
+        "esp_system.h": "c"
     },
     "idf.adapterTargetName": "esp32c3"
 }

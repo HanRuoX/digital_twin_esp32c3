@@ -9,15 +9,17 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "soc/soc_caps.h"
-#include "esp_log.h"
+#include "nvs_flash.h"
+
 #include "esp_adc/adc_oneshot.h"
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
 #include "DEV_Config.h"
 #include "EPD_Test.h"
 
-//websocket
-#include "esp_websocket_client.h"
+
+#include "websocket_task.h"
+
 
 #define USE_ADC_CHANNEL CONFIG_ADC_GPIO_NUM
 const static char *TAG = "DEV";
@@ -64,6 +66,13 @@ void ink_task(void *arg){
 
 void app_main(void)
 {
-     xTaskCreate(adc_task, "main_task", 2048, NULL, 6, NULL);
-     xTaskCreate(ink_task, "main_task", 2048, NULL, 6, NULL);
+
+
+    ESP_ERROR_CHECK(nvs_flash_init());  //初始化flash
+    websocket_task();
+
+
+    // xTaskCreate(adc_task, "adc_task", 2048, NULL, 6, NULL);    //创建adc采集任务
+    // xTaskCreate(ink_task, "ink_task", 2048, NULL, 6, NULL);    //创建墨水屏任务
+    // xTaskCreate(websocket_task, "websocket_task", 2048*4, NULL, 6, NULL);  //创建websocket任务
 }
