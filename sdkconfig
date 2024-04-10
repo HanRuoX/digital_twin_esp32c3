@@ -390,6 +390,29 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# 项目配置
+#
+
+#
+# 振动传感器配置
+#
+CONFIG_ADC_GPIO_NUM=4
+# end of 振动传感器配置
+
+#
+# 墨水屏配置
+#
+CONFIG_EPD_SPI_HOST=2
+CONFIG_EPD_CS_PIN=10
+CONFIG_EPD_MOSI_PIN=7
+CONFIG_EPD_CLK_PIN=6
+CONFIG_EPD_DC_PIN=19
+CONFIG_EPD_BUSY_PIN=18
+CONFIG_EPD_RST_PIN=8
+# end of 墨水屏配置
+# end of 项目配置
+
+#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEFAULT=y

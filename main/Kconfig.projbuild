@@ -1,0 +1,51 @@
+menu "项目配置"
+    menu "振动传感器配置"
+        config ADC_GPIO_NUM
+            int
+            prompt "振动传感器连接引脚"
+            range 0 39
+            default 4
+    endmenu
+    
+    menu "墨水屏配置"
+        config EPD_SPI_HOST
+            int
+            prompt "使用SPI通道"
+            range 0 39
+            default 2
+        config EPD_CS_PIN
+            int
+            prompt "CS引脚"
+            range 0 39
+            default 10
+        config EPD_MOSI_PIN
+            int
+            prompt "MOSI引脚"
+            range 0 39
+            default 7
+        config EPD_CLK_PIN
+            int
+            prompt "CLK引脚"
+            range 0 39
+            default 6
+        config EPD_DC_PIN
+            int
+            prompt "DC引脚"
+            range 0 39
+            default 19
+        config EPD_BUSY_PIN
+            int
+            prompt "BUSY引脚"
+            range 0 39
+            default 18
+        config EPD_RST_PIN
+            int
+            prompt "RST引脚"
+            range 0 39
+            default 8    
+        
+        
+            
+    endmenu
+
+endmenu

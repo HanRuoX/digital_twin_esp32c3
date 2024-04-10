@@ -69,17 +69,17 @@
 /**
  * 配置墨水屏引脚 以及SPI
 **/
-#define EPD_HOST    SPI2_HOST
+#define EPD_HOST    (CONFIG_EPD_SPI_HOST-1)
 // #define DMA_CHAN    SPI2_HOST
 
 // #define PIN_NUM_MISO 2
-#define PIN_NUM_MOSI 7
-#define PIN_NUM_CLK  6
+#define PIN_NUM_MOSI CONFIG_EPD_MOSI_PIN
+#define PIN_NUM_CLK  CONFIG_EPD_CLK_PIN
 
-#define EPD_CS_PIN   10
-#define EPD_DC_PIN   19
-#define EPD_RST_PIN  18
-#define EPD_BUSY_PIN 8
+#define EPD_CS_PIN   CONFIG_EPD_CS_PIN
+#define EPD_DC_PIN   CONFIG_EPD_DC_PIN
+#define EPD_RST_PIN  CONFIG_EPD_RST_PIN
+#define EPD_BUSY_PIN CONFIG_EPD_BUSY_PIN
 
 /**
  * GPIO read and write

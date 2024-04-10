@@ -16,8 +16,12 @@
 #include "DEV_Config.h"
 #include "EPD_Test.h"
 
+#define USE_ADC_CHANNEL CONFIG_ADC_GPIO_NUM
 const static char *TAG = "DEV";
 int adc_raw[0] = {0x00};
+/*
+ * adc采集振动参数任务
+ */
 void adc_task(void *arg){
      //-------------ADC1 Init---------------//
     adc_oneshot_unit_handle_t adc1_handle;
@@ -31,25 +35,30 @@ void adc_task(void *arg){
         .bitwidth = ADC_BITWIDTH_12,
         .atten = ADC_ATTEN_DB_0,
     };
-    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, ADC_CHANNEL_4, &config));
+    ESP_ERROR_CHECK(adc_oneshot_config_channel(adc1_handle, USE_ADC_CHANNEL, &config));
 
     for (;;)
     {
-        ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, ADC_CHANNEL_4, &adc_raw[0]));
+        ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, USE_ADC_CHANNEL, &adc_raw[0]));
         //ESP_LOGI(TAG, "ADC Channel2 Raw Data: %d",  adc_raw[0]);
         printf("samples:%d\n", adc_raw[0]);
         vTaskDelay(pdMS_TO_TICKS(100));
     }
     
 }
-
+/*
+ * 墨水屏任务
+ */
 void ink_task(void *arg){
+
     GPIO_Init();
     SPI_Init();
     EPD_2in13_test();
 
     
 }
+
+
 void app_main(void)
 {
      xTaskCreate(adc_task, "main_task", 2048, NULL, 6, NULL);

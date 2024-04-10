@@ -4825,6 +4825,134 @@
                 "children": [
                     {
                         "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "ADC_GPIO_NUM",
+                        "name": "ADC_GPIO_NUM",
+                        "range": [
+                            0,
+                            39
+                        ],
+                        "title": "\u632f\u52a8\u4f20\u611f\u5668\u8fde\u63a5\u5f15\u811a",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "\u9879\u76ee\u914d\u7f6e-\u632f\u52a8\u4f20\u611f\u5668\u914d\u7f6e",
+                "title": "\u632f\u52a8\u4f20\u611f\u5668\u914d\u7f6e",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "EPD_SPI_HOST",
+                        "name": "EPD_SPI_HOST",
+                        "range": [
+                            0,
+                            39
+                        ],
+                        "title": "\u4f7f\u7528SPI\u901a\u9053",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "EPD_CS_PIN",
+                        "name": "EPD_CS_PIN",
+                        "range": [
+                            0,
+                            39
+                        ],
+                        "title": "CS\u5f15\u811a",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "EPD_MOSI_PIN",
+                        "name": "EPD_MOSI_PIN",
+                        "range": [
+                            0,
+                            39
+                        ],
+                        "title": "MOSI\u5f15\u811a",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "EPD_CLK_PIN",
+                        "name": "EPD_CLK_PIN",
+                        "range": [
+                            0,
+                            39
+                        ],
+                        "title": "CLK\u5f15\u811a",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "EPD_DC_PIN",
+                        "name": "EPD_DC_PIN",
+                        "range": [
+                            0,
+                            39
+                        ],
+                        "title": "DC\u5f15\u811a",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "EPD_BUSY_PIN",
+                        "name": "EPD_BUSY_PIN",
+                        "range": [
+                            0,
+                            39
+                        ],
+                        "title": "BUSY\u5f15\u811a",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "EPD_RST_PIN",
+                        "name": "EPD_RST_PIN",
+                        "range": [
+                            0,
+                            39
+                        ],
+                        "title": "RST\u5f15\u811a",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "\u9879\u76ee\u914d\u7f6e-\u58a8\u6c34\u5c4f\u914d\u7f6e",
+                "title": "\u58a8\u6c34\u5c4f\u914d\u7f6e",
+                "type": "menu"
+            }
+        ],
+        "depends_on": null,
+        "id": "\u9879\u76ee\u914d\u7f6e",
+        "title": "\u9879\u76ee\u914d\u7f6e",
+        "type": "menu"
+    },
+    {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [],
                         "depends_on": "<choice COMPILER_OPTIMIZATION>",
                         "help": null,
                         "id": "COMPILER_OPTIMIZATION_DEFAULT",
