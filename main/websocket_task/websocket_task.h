@@ -32,6 +32,7 @@
 #include "esp_netif.h"
 #include "esp_system.h"
 #include "protocol_examples_common.h"
+#include "my_config.h"
 
 // void websocket_task(void *arg);
 void websocket_task();

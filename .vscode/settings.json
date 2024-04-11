@@ -11,7 +11,11 @@
         "protocol_examples_common.h": "c",
         "esp_netif.h": "c",
         "esp_event.h": "c",
-        "esp_system.h": "c"
+        "esp_system.h": "c",
+        "config.h": "c",
+        "my_config.h": "c",
+        "freertos.h": "c",
+        "soc_caps.h": "c"
     },
     "idf.adapterTargetName": "esp32c3"
 }

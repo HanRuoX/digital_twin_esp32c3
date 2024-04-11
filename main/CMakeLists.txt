@@ -8,4 +8,5 @@ idf_component_register(SRCS "main.c"
                             "websocket_task/websocket_task.c"
                     INCLUDE_DIRS "."
                                  "websocket_task"
+                                 "my_config"
                     )

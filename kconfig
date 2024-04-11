@@ -1,6 +1,8 @@
+mainmenu "test "
+
 menu "项目配置"
     menu "振动传感器配置"
-        config ADC_GPIO_NUM
+        config CONFIG_ADC_GPIO_NUM
             int
             prompt "振动传感器连接引脚"
             range 0 39
@@ -8,37 +10,37 @@ menu "项目配置"
     endmenu
     
     menu "墨水屏配置"
-        config EPD_SPI_HOST
+        config CONFIG_EPD_SPI_HOST
             int
             prompt "使用SPI通道"
             range 0 39
             default 2
-        config EPD_CS_PIN
+        config CONFIG_EPD_CS_PIN
             int
             prompt "CS引脚"
             range 0 39
             default 10
-        config EPD_MOSI_PIN
+        config CONFIG_EPD_MOSI_PIN
             int
             prompt "MOSI引脚"
             range 0 39
             default 7
-        config EPD_CLK_PIN
+        config CONFIG_EPD_CLK_PIN
             int
             prompt "CLK引脚"
             range 0 39
             default 6
-        config EPD_DC_PIN
+        config CONFIG_EPD_DC_PIN
             int
             prompt "DC引脚"
             range 0 39
             default 19
-        config EPD_BUSY_PIN
+        config CONFIG_EPD_BUSY_PIN
             int
             prompt "BUSY引脚"
             range 0 39
             default 18
-        config EPD_RST_PIN
+        config CONFIG_EPD_RST_PIN
             int
             prompt "RST引脚"
             range 0 39
@@ -49,13 +51,13 @@ menu "项目配置"
     endmenu
 
     menu "websocket配置"
-        config GCOV_ENABLED
+        config CONFIG_GCOV_ENABLED
             bool "Coverage analyzer"
             default n
             help
                 Enables coverage analyzing for host tests.
     
-        config WEBSOCKET_URI
+        config CONFIG_WEBSOCKET_URI
               string "Websocket endpoint URI"
               default "ws://echo.websocket.events"
               help
