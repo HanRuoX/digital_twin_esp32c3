@@ -59,10 +59,16 @@ void adc_task(void *arg){
 void ink_task(void *arg){
 
     GPIO_Init();
+    vTaskDelay(pdMS_TO_TICKS(300));
     SPI_Init();
-    EPD_2in13_test();
+    vTaskDelay(pdMS_TO_TICKS(300));
+    EPD_2in13bc_test();
 
-    
+    for(;;){
+        printf("tttttt\n");
+        vTaskDelay(pdMS_TO_TICKS(5000));
+
+    }
 }
 
 
@@ -70,11 +76,11 @@ void app_main(void)
 {
 
 
-    ESP_ERROR_CHECK(nvs_flash_init());  //初始化flash
-    websocket_task();
+    // ESP_ERROR_CHECK(nvs_flash_init());  //初始化flash
+    // websocket_task();
 
 
     // xTaskCreate(adc_task, "adc_task", 2048, NULL, 6, NULL);    //创建adc采集任务
-    // xTaskCreate(ink_task, "ink_task", 2048, NULL, 6, NULL);    //创建墨水屏任务
+    xTaskCreate(ink_task, "ink_task", 2048*2, NULL, 6, NULL);    //创建墨水屏任务
     // xTaskCreate(websocket_task, "websocket_task", 2048*4, NULL, 6, NULL);  //创建websocket任务
 }

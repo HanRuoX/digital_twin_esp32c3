@@ -29,10 +29,11 @@
 ******************************************************************************/
 #include "EPD_Test.h"
 #include "EPD_2in13.h"
+#include "EPD_2in13bc.h"
 
 int EPD_2in13_test(void)
 {
-    printf("EPD_2IN13_test Demo\r\n");
+    // printf("EPD_2IN13_test Demo\r\n");
     DEV_Module_Init();
 
     printf("e-Paper Init and Clear...\r\n");
@@ -43,13 +44,13 @@ int EPD_2in13_test(void)
     //Create a new image cache
     UBYTE *BlackImage;
     /* you have to edit the startup_stm32fxxx.s file and set a big enough heap size */
-    UWORD Imagesize = ((EPD_2IN13_WIDTH % 8 == 0)? (EPD_2IN13_WIDTH / 8 ): (EPD_2IN13_WIDTH / 8 + 1)) * EPD_2IN13_HEIGHT;
+    UWORD Imagesize = ((EPD_2IN13BC_WIDTH % 8 == 0)? (EPD_2IN13BC_WIDTH / 8 ): (EPD_2IN13BC_WIDTH / 8 + 1)) * EPD_2IN13BC_HEIGHT;
     if((BlackImage = (UBYTE *)malloc(Imagesize)) == NULL) {
         printf("Failed to apply for black memory...\r\n");
         return -1;
     }
     printf("Paint_NewImage\r\n");
-    Paint_NewImage(BlackImage, EPD_2IN13_WIDTH, EPD_2IN13_HEIGHT, 270, WHITE);
+    Paint_NewImage(BlackImage, EPD_2IN13BC_WIDTH, EPD_2IN13BC_HEIGHT, 270, WHITE);
 
 #if 1   //show image for array    
     printf("show image for array\r\n");
@@ -145,3 +146,33 @@ int EPD_2in13_test(void)
     return 0;
 }
 
+
+int EPD_2in13bc_test(void)
+{
+    // DEBUG("2.13inch e-Paper B and C demo\r\n");
+    DEV_Module_Init();
+    EPD_2IN13BC_Init();
+    EPD_2IN13BC_Clear();
+    DEV_Delay_ms(100);
+
+    //Create a new image cache
+    UBYTE *BlackImage;
+    /* you have to edit the startup_stm32fxxx.s file and set a big enough heap size */
+    UWORD Imagesize = ((EPD_2IN13BC_HEIGHT % 8 == 0)? (EPD_2IN13BC_HEIGHT / 8 ): (EPD_2IN13BC_HEIGHT / 8 + 1)) * EPD_2IN13_HEIGHT;
+    if((BlackImage = (UBYTE *)malloc(Imagesize)) == NULL) {
+        printf("Failed to apply for black memory...\r\n");
+        return -1;
+    }
+    printf("Paint_NewImage\r\n");
+    Paint_NewImage(BlackImage, EPD_2IN13BC_HEIGHT, EPD_2IN13BC_HEIGHT, 270, WHITE);
+
+    Paint_SelectImage(BlackImage);
+    Paint_Clear(WHITE);
+    Paint_DrawBitMap(gImage_2in13c_b);
+    //3.Refresh the image in RAM to e-Paper
+    EPD_2IN13BC_Display(BlackImage);
+    DEV_Delay_ms(4000);
+
+    
+    return 0;
+}

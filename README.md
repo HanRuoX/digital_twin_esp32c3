@@ -2,6 +2,17 @@
 
 adc采集：gpio4 对应 ADC_CHANNEL_4
 `idf.py add-dependency "espressif/esp_websocket_client^1.2.3"`添加websocket依赖
+
+> To Do：
+>
+> - 配网
+> - esptool.js 网页下载，串口工具
+> - 墨水屏图像处理，上传刷屏
+> - 振动FFT
+> - 温湿度传感器
+> - gps
+> - 陀螺仪 three.js 
+
 ## 墨水屏驱动
 
 使用微雪驱动方案，移植微雪驱动到ESPIDF环境中
@@ -41,3 +52,10 @@ adc采集：gpio4 对应 ADC_CHANNEL_4
 - 建立连接，选择设备id转发至前端
 - 认证信息
 - 错误处理
+
+## 配网方式
+
+- kconfig直接写死
+- AP模式，开启http服务器，通过网页发送ssid和password，然后设备再重启连接对应wifi转成sta模式
+- smart config 通过手机广播出ssid和password，局限性：需要手机移动设备
+- ble

@@ -34,7 +34,7 @@ menu "项目配置"
             int
             prompt "DC引脚"
             range 0 39
-            default 19
+            default 9
         config CONFIG_EPD_BUSY_PIN
             int
             prompt "BUSY引脚"
@@ -44,7 +44,7 @@ menu "项目配置"
             int
             prompt "RST引脚"
             range 0 39
-            default 8    
+            default 5    
         
         
             

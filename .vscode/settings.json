@@ -15,7 +15,10 @@
         "config.h": "c",
         "my_config.h": "c",
         "freertos.h": "c",
-        "soc_caps.h": "c"
+        "soc_caps.h": "c",
+        "dev_config.h": "c",
+        "debug.h": "c",
+        "epd_2in13.h": "c"
     },
     "idf.adapterTargetName": "esp32c3"
 }
