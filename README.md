@@ -7,13 +7,21 @@ adc采集：gpio4 对应 ADC_CHANNEL_4
 >
 > - 配网
 > - esptool.js 网页下载，串口工具
-> - 墨水屏图像处理，上传刷屏
+> - ~~墨水屏图像处理~~，web上传刷屏
 > - 振动FFT
 > - 温湿度传感器
 > - gps
 > - 陀螺仪 three.js 
 
 ## 墨水屏驱动
+
+目前使用image2lcd取模软件设置如下，需用photoshop做图
+
+![image-20240415170647721](/Users/shangxin/esp-project/digital_twin_esp32c3/README.assets/image-20240415170647721.png)
+
+---
+
+
 
 使用微雪驱动方案，移植微雪驱动到ESPIDF环境中
 
