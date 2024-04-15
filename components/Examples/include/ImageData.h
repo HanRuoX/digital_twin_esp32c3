@@ -86,6 +86,9 @@ extern const unsigned char gImage_7in5bc_b[];
 extern const unsigned char gImage_7in5bc_ry[];
 extern const unsigned char gImage_7in5_V2_b[];
 extern const unsigned char gImage_7in5_V2_ry[];
+extern const unsigned char gImage_qrcode[]; 
+extern const unsigned char gImage_qrcode1[]; 
+
 #endif
 /* FILE END */
 

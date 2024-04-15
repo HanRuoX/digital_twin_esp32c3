@@ -158,17 +158,17 @@ int EPD_2in13bc_test(void)
     //Create a new image cache
     UBYTE *BlackImage;
     /* you have to edit the startup_stm32fxxx.s file and set a big enough heap size */
-    UWORD Imagesize = ((EPD_2IN13BC_HEIGHT % 8 == 0)? (EPD_2IN13BC_HEIGHT / 8 ): (EPD_2IN13BC_HEIGHT / 8 + 1)) * EPD_2IN13_HEIGHT;
+    UWORD Imagesize = ((EPD_2IN13BC_WIDTH % 8 == 0)? (EPD_2IN13BC_WIDTH / 8 ): (EPD_2IN13BC_WIDTH / 8 + 1)) * EPD_2IN13BC_HEIGHT;
     if((BlackImage = (UBYTE *)malloc(Imagesize)) == NULL) {
         printf("Failed to apply for black memory...\r\n");
         return -1;
     }
     printf("Paint_NewImage\r\n");
-    Paint_NewImage(BlackImage, EPD_2IN13BC_HEIGHT, EPD_2IN13BC_HEIGHT, 270, WHITE);
+    Paint_NewImage(BlackImage, EPD_2IN13BC_WIDTH, EPD_2IN13BC_HEIGHT, 0, 0x01);
 
     Paint_SelectImage(BlackImage);
     Paint_Clear(WHITE);
-    Paint_DrawBitMap(gImage_2in13c_b);
+    Paint_DrawBitMap(gImage_qrcode1);
     //3.Refresh the image in RAM to e-Paper
     EPD_2IN13BC_Display(BlackImage);
     DEV_Delay_ms(4000);
